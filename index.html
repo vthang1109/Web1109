@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thư mời đi chơi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Thư mời đi chơi</h1>
+  <div class="heart">❤️</div>
+  <div class="names">Văn Thắng & Trúc Hương</div>
+
+  <div class="photos">
+    <img src="vt.jpg" alt="Văn Thắng">
+    <img src="trh.jpg" alt="Trúc Hương">
+  </div>
+
+  <div class="info-box">
+    <p><strong>🕕 Thời gian:</strong> 18h Chủ Nhật (22/06/2025)</p>
+    <p><strong>🌍 Địa điểm:</strong> Cùng anh băng qua bao đại dương 🌊</p>
+    <p><strong>🙋 Người mời:</strong> Anh – người lên kế hoạch với tất cả sự dễ thương có thể 😅</p>
+    <p><strong>🚗 Phương tiện:</strong> Anh tới đón, em chỉ cần chuẩn bị nụ cười 😊</p>
+
+    <div id="countdown">⏳ Đếm ngược: ...</div>
+
+    <button class="button" onclick="document.getElementById('form').classList.toggle('hidden')">
+      📋 Dữ liệu cho cuộc đi chơi
+    </button>
+
+    <div id="form" class="hidden form-section">
+      <input type="text" placeholder="👗 Trang phục em định mặc là..." />
+      <input type="text" placeholder="🍔 Chiếc bụng đói ăn gì nè?" />
+      <input type="text" placeholder="📍 Bé ơi mình đi đâu thế?" />
+
+      <p>⏳ Em có delay không?</p>
+      <select onchange="handleDelay(this.value)">
+        <option value="">-- Chọn --</option>
+        <option value="no">Không</option>
+        <option value="yes">Có</option>
+      </select>
+
+      <div id="delayInput" class="hidden">
+        <input type="text" placeholder="⏰ Em sẽ delay bao lâu?" />
+      </div>
+
+      <div id="noDelayMessage" class="hidden">
+        <p>✅ Tuyệt vời luôn!</p>
+      </div>
+
+      <br>
+      <button class="button shake" onclick="window.open('https://facebook.com/vthang1109', '_blank')">
+        📸 Chụp lại và gửi thông tin cho anh
+      </button>
+    </div>
+  </div>
+
+  <br>
+  <button class="button" onclick="document.getElementById('loveButtons').classList.remove('hidden')">
+    💌 Em có yêu anh không?
+  </button>
+
+  <div id="loveButtons" class="hidden">
+    <button id="yesBtn" class="button" onclick="alert('🥰 Anh cũng yêu em!')">Có</button>
+    <button id="noBtn" class="button" onclick="shrinkNo()">Không</button>
+  </div>
+
+  <div class="weather-box">
+    <h3>🌤️ Dự báo thời tiết (22/06/2025 - 18h - TP.HCM)</h3>
+    <p>Thời tiết buổi tối dễ chịu, trời quang mây nhẹ, nhiệt độ khoảng 28°C. Không có mưa, gió nhẹ. Rất lý tưởng cho buổi đi chơi cùng người thương 💑</p>
+  </div>
+
+  <div class="signature">Yêu em, người gửi – Văn Thắng 💖</div>
+  <div id="balloon-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
